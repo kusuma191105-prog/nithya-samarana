@@ -1,0 +1,21 @@
+import streamlit as st
+from datetime import date
+
+st.set_page_config(page_title="Nitya Smarana", page_icon="📓")
+
+st.title("📓 Nitya Smarana")
+st.subheader("Journal & Mood Tracker")
+
+st.write("Welcome to your personal journal space!")
+
+mood = st.selectbox("How are you feeling today?", 
+    ["😊 Happy", "😐 Neutral", "😢 Sad", "😡 Angry", "😴 Tired"])
+
+journal = st.text_area("Write your thoughts for today:", height=200)
+
+if st.button("Save Entry"):
+    st.success(f"Entry saved for {date.today()} with mood {mood}!")
+    st.balloons()
+
+st.divider()
+st.caption("Built by Kusuma | B.Sc Computer Science")
